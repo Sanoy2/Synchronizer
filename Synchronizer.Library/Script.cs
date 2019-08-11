@@ -22,7 +22,14 @@ namespace Synchronizer.Library
 
         private static string BuildCommand(Step step)
         {
-            return $"{tool} {step.SourceDirectory} {step.DestinationDirectory} {step.Options}";
+            if(step.IsEnabled)
+            {
+                return $"{tool} {step.SourceDirectory} {step.DestinationDirectory} {step.Options}";
+            }
+            else
+            {
+                return $"echo Step {step.SourceName} -> {step.DestinationName} is disabled";
+            }
         }
     }
 }

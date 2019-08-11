@@ -21,6 +21,7 @@ namespace Synchronizer.Library
         public Step()
         {
             Id = ++id;
+            IsEnabled = true;
         }
 
         public override string ToString()
