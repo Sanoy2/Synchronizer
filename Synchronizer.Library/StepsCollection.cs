@@ -11,19 +11,23 @@ namespace Synchronizer.Library
         private List<Step> steps;
         public IList<Step> Steps { get => steps; }
 
-        public StepsCollection(bool mock = false)
+        public StepsCollection(bool mock = false, int howMany = 1)
         {
             steps = new List<Step>();
             if(mock)
             {
-                var step = new Step()
+                for (int i = 0; i < howMany; i++)
                 {
-                    Label = "mock",
-                    SourceDirectory = "C:\\tmp\\loc1",
-                    DestinationDirectory = "C:\\tmp\\loc2",
-                    Options = "*.txt *.xml /xo /s /xl"
-                };
-                steps.Add(step) ;
+                    var step = new Step()
+                    {
+                        SourceDirectory = "C:\\tmp\\loc1",
+                        DestinationDirectory = "C:\\tmp\\loc2",
+                        SourceName = "loc1",
+                        DestinationName = "loc2",
+                        Options = "*.txt *.xml /xo /s /xl"
+                    };
+                    steps.Add(step);
+                }
             }
         }
 

@@ -14,7 +14,7 @@ namespace Synchronizer.Library
         public string RunScript(string scriptText)
         {
             Runspace runspace = RunspaceFactory.CreateRunspace();
-
+            
             runspace.Open();
 
             Pipeline pipeline = runspace.CreatePipeline();
