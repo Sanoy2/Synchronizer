@@ -23,8 +23,7 @@ namespace Synchronizer.Library
                         SourceDirectory = $"C:\\tmp\\loc{i}",
                         DestinationDirectory = $"C:\\tmp\\loc{i + 1}",
                         SourceName = $"loc{i}",
-                        DestinationName = $"loc{i + 1}",
-                        Options = "*.txt *.xml /xo /s /xl"
+                        DestinationName = $"loc{i + 1}"
                     };
                     steps.Add(step);
                 }

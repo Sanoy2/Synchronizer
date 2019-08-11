@@ -22,6 +22,7 @@ namespace Synchronizer.Library
         {
             Id = ++id;
             IsEnabled = true;
+            Options = "*.dll *.pdb *.xml /xo /s /xl";
         }
 
         public override string ToString()
