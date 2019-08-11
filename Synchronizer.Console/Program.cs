@@ -11,6 +11,7 @@ namespace Synchronizer.Console
     {
         static void Main(string[] args)
         {
+            System.Console.WriteLine("Start");
             var steps = new StepsCollection(true);
             var script = Script.BuildScript(steps);
             System.Console.WriteLine(script);
@@ -19,6 +20,8 @@ namespace Synchronizer.Console
             var output = runner.RunScript(script);
             System.Console.WriteLine(output);
 
+            System.Console.WriteLine("Finished");
+            System.Console.WriteLine("Press any key to continue..");
             System.Console.ReadKey();
         }
     }
